@@ -1,0 +1,27 @@
+/* #nav-bar{
+  color: blue;
+  font-weight: bold;
+  background-color: blue;
+}
+.make-inline{
+  display: inline!important;
+} */
+#shopping-cart{
+  color: #fff!important;
+  padding: 8px!important;
+  text-decoration: none!important;
+}
+#shopping-cart.focus, #shopping-cart:focus{
+  outline: 0!important;
+  box-shadow: none!important;
+}
+
+#shopping-cart:hover{
+  background: var(--color-foreground-text-sub);
+}
+.hide-cart{
+  display: none;
+}
+.show-cart {
+  display: show;
+}

@@ -1,0 +1,40 @@
+/* Pending */
+.cart-border {
+  border: 1px solid #dddddd;
+  overflow: hidden;
+}
+.cart {
+  margin-left: 10px;
+}
+
+.submit-margins {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.xbtn {
+  width: 30px;
+  height: 30px;
+  font-size: 16px !important;
+  border-radius: 20px !important;
+  background-color: red;
+  color: white;
+}
+
+th{
+color:black;
+font-weight: bolder;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#tablediv {
+  max-width: 100%;
+}
+
+.mdb-card {
+  overflow: hidden;
+}
+
+.mdBContain{
+  overflow: hidden;
+}
