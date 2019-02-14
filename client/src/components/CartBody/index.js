@@ -65,7 +65,7 @@ validateQuantity = (event) => {
     //Validate Whether the Quantity is in stock
     if(event){
       let quantityId = event.target.id;
-      console.log("CLICKED ITEM ID = "+quantityId);
+      // console.log("CLICKED ITEM ID = "+quantityId);
       // this.props.updateItem(event.target.id, event.target.value);
       this.props.updateItem(quantityId, event.target.value);
     }

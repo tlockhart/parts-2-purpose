@@ -44,16 +44,16 @@ module.exports = {
         if (data.length > 0) {
     //********** */ Send Email
     const transporter = nodemailer.createTransport({
-      // service: 'gmail',
-      // auth: {
-      //   // user: 'parts2pieces.info@gmail.com',
-      //   pass: process.env.gmailPassword
-      // }
-      service: 'yahoo',
+      service: 'gmail',
       auth: {
-        user: 'parts2purpose.yahoo.com',
-        pass: process.env.yahooPassword
+        user: 'parts2pieces.info@gmail.com',
+        pass: process.env.gmailPassword
       }
+      // service: 'yahoo',
+      // auth: {
+      //   user: 'parts2purpose.yahoo.com',
+      //   pass: process.env.yahooPassword
+      // }
     });
 
     const mailOptions = {
