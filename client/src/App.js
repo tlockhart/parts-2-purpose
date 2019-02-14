@@ -50,6 +50,7 @@ class App extends Component {
     document.getElementById('ddlOrgList').selectedIndex = 0;
     // console.log("Processing ShowHide Cart");
     showHideCartCB();
+    window.location.reload();
   };
 
   retrievePage = () => {
@@ -96,7 +97,9 @@ class App extends Component {
               <Route exact path="/home/:organization" component={HomeContainer} />
               {/* Pass the selected organization to the SearchContainer Page for a re-render*/}
               <Route exact path="/search/:organization"
-                component={() => <SearchUpdate organization = {this.state.organization}/>} />
+                // render={(props) => <SearchUpdate {...props} organization = {this.state.organization}/>}
+                render={() => <SearchUpdate organization = {this.state.organization}/>}
+              />
               <Route exact path="/confirmation/:orderId" component={ConfirmationContainer} />
               <Route exact path="/donate" component={DonateContainer} />
               <Route component={NoMatch} />
