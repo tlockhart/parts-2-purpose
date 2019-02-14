@@ -149,7 +149,7 @@ export function DeleteCartItemBtn(props){
       <Touchable  onPress={props.submitOrder}>
           <span
                 id = {props.cartItem._id}
-                className=" xbtn "
+                className= "xbtn"
                 data-cart-item-id= {props.cartItem._id}
                 onClick= {props.delCartItems}>
                 X
