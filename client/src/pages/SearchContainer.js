@@ -129,7 +129,8 @@ class SearchContainer extends Component {
     const ddlCatElem = document.getElementById("ddlCatList");
     const category = ddlCatElem.options[ddlCatElem.selectedIndex].text;
     this.setState({ category: category });
-    if (category && category !== "All") {
+    // if (category && category !== "All") {
+      if(category){
       event.preventDefault();
       const baseURL = "/products";
       const formattedCategory = '/' + category;
@@ -142,10 +143,10 @@ class SearchContainer extends Component {
         this.setCatProductsState
       );
     }
-    else if (category) {
-      this.loadInventoryByOrganization("/products", this.state.organization,
-        this.setCatProductsState);
-    }
+    // else if (category) {
+    //   this.loadInventoryByOrganization("/products", this.state.organization,
+    //     this.setCatProductsState);
+    // }
   };
 
   //Initialize the product state variables with the
@@ -184,18 +185,23 @@ class SearchContainer extends Component {
     event.preventDefault();
     const addButton = document.getElementById(event.target.id);
     addButton.disabled = true;
+    let tId = event.target.id;
+    API.getItem(tId)
 
-    API.getItem(event.target.id)
       .then(res => {
         //callback to store state variables
+        // console.log("PRODUCT ID = "+tId);
+        // console.log("RES = "+JSON.stringify(res));
         const cartItem =
         {
+          // var productId = order.id;
           _id: res.data._id,
           product: res.data.productName,
           description: res.data.description,
           uom: res.data.uom,
           stockQuantity: res.data.stockQuantity,
-          productQuantity: 1
+          tId: tId,
+          productQuantity: 1 //no productQuantity
         };
         this.cartItems.push(cartItem);
         this.setState({ cartItems: this.cartItems });
@@ -291,9 +297,15 @@ class SearchContainer extends Component {
     let newStockQuantity = parseInt(currentStockQuantity) - orderQuantity;
     return newStockQuantity;
   }
+  //Set QTY each time the input is changed.
+  //Event triggers in cartbody calls validate quantity and updateItem.
   updateItem = (id, quantity) => {
+    let quantityId = id.slice(9);
     for (let i = 0; i < this.cartItems.length; i++) {
-      if (this.cartItems[i]._id === id) {
+      // if (this.cartItems[i]._id === id) {
+        // console.log("OUTSIDE IF: Quantity = "+quantityId, "CartItem.id = "+this.cartItems[i]._id);
+        if (this.cartItems[i]._id === quantityId) {
+          // console.log("INSIDE IF: Quantity = "+quantityId, "CartItem.id = "+this.cartItems[i]._id);
         this.cartItems[i].productQuantity = quantity;
       }
     }
@@ -412,7 +424,7 @@ class SearchContainer extends Component {
                         </button>
                       </div>
                       {/* <!--Body--> */}
-                      <div className="modal-body body-modal">
+                      <div className="modal-body">
                   <CartBody
                               updateItem={this.updateItem}
                               cartItems={this.cartItems}

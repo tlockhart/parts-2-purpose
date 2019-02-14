@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Touchable from "rc-touchable";
 import "./style.css";
-import { MDBContainer, MDBTable, MDBRow,
+import { MDBContainer, MDBCard, MDBTable, MDBRow,
         MDBCol, MDBTableHead, MDBTableBody,
         MDBTooltip} from "mdbreact";
 
@@ -11,24 +11,25 @@ import { MDBContainer, MDBTable, MDBRow,
   return (
     <React.Fragment>
     {props.currentId ?
-    <React.Fragment>
-    <MDBContainer>
+    <MDBContainer className="mt-3">
+      {/* <MDBRow className="py-3"> */}
       <MDBRow>
-        <MDBCol>
-            <MDBTable>
+        <MDBCol md="12">
+          <MDBCard id = "mdBContain">
+            <MDBTable className="w-100">
                 <MDBTableHead>
                   <tr >
-                    <th className="align-middle w-75">Item</th>
-                    <th className="align-middle w-50">Description</th>
+                    <th className="align-middle">Item</th>
+                    <th className="align-middle">Description</th>
                     <MDBTooltip
                       placement="bottom"
                       tag="th"
-                      className="align-middle text-center w-50"
+                      className="align-middle text-center"
                       tooltipContent="Unit of Measure">
                       UOM
                     </MDBTooltip>
-                    <th className="align-middle text-center w-25">Quantity</th>
-                    <th className="align-middle text-center"></th>
+                    <th className="align-middle text-center">Quantity</th>
+                    <th className="align-middle text-center">Del</th>
                   </tr>
                 </MDBTableHead>
                 <MDBTableBody>
@@ -42,15 +43,16 @@ import { MDBContainer, MDBTable, MDBRow,
                               stockQuantity={cartItem.stockQuantity}
                               cartItem= {cartItem}
                               delCartItems= {props.delCartItems}>
-                    </CartItem>
+                              </CartItem>
                   );
                 })}
                 </MDBTableBody>
               </MDBTable>
+            </MDBCard>
+              {/* <CheckOutBtn submitOrder= {props.submitOrder}></CheckOutBtn> */}
         </MDBCol>
       </MDBRow>
     </MDBContainer>
-  </React.Fragment>
     :<div className = "hide-component"></div>}
     </React.Fragment>
   );//return
@@ -64,10 +66,7 @@ componentDidUpdate() {
 validateQuantity = (event) => {
     //Validate Whether the Quantity is in stock
     if(event){
-      let quantityId = event.target.id;
-      console.log("CLICKED ITEM ID = "+quantityId);
-      // this.props.updateItem(event.target.id, event.target.value);
-      this.props.updateItem(quantityId, event.target.value);
+     this.props.updateItem(event.target.id, event.target.value);
     }
     let quantityInputElements = document.querySelectorAll('[data-quantity-id]');
     let isQuantityAvailable = true;
@@ -118,7 +117,7 @@ validateQuantity = (event) => {
       </td>
       <td className="align-middle  text-center">
         <input className = "show-component text-center w-75"
-              id={'quantity-'+this.props.cartItem._id} type="number"
+              id={this.props.cartItem._id} type="number"
               data-quantity-id = {this.props.cartItem._id}
               min = "1" max = {this.props.stockQuantity}
               defaultValue = {this.props.cartItemQuantity}
