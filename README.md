@@ -65,7 +65,7 @@ In order to run the app, you will need to clone this repository and install all 
 2. Install all required technologies
 3. [Optional] In Bash, change the current directory to the Parts2Purpose directory and install create-react-app module using the following command:
     1. npm install -g create-react-app
-4. [Optional: Windows Users Only]  Run the following commands in powershell as an ADMINISTRATOR in the Parts2Purpose root directory.
+4. [Optional: Windows Users Only]  Run the following commands in powershell as an Administrator in the Parts2Purpose root directory.
     1. npm install node-pre-gyp -g
     2. [Close your IDE if open]
     3. npm install --global --production windows-build-tools
