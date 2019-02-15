@@ -4,6 +4,7 @@ import { Input, Dropdown, DropdownList } from "../LogIn";
 import { MDBTooltip, MDBBtn, MDBModal, MDBModalBody,
          MDBModalHeader, MDBModalFooter } from 'mdbreact';
 import "../../style.css";
+import "./style.css";
 
 
 export function ModalComponent(props) {
@@ -13,7 +14,7 @@ export function ModalComponent(props) {
     return (
       <MDBModal isOpen={props.state.show}
                 toggle={props.handleClose}
-                className={props.state.registerUser ? ("modal-Container"):("")}>
+              className= { (props.state.registerUser) ? ("modal-Container modal-scroll-y"):("")}>
       <MDBModalHeader className="text-center">
           {props.state.registerUser ? ("Please Register"):("Please Login")}
           {props.state.loginError && !props.state.registerUser ? (<p className="text-danger">Incorrect Username or Password!</p>):("")}
