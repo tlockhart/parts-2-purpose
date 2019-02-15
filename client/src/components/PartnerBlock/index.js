@@ -62,7 +62,7 @@ function PartnerBlock() {
           <br /><br />
           Our goal is to provide an IT solution that would make the process easier for small nonprofits to manage their donations so that they can spend more time working on their cause -- making a difference.  Our app is called Parts-to-Purpose.  It is a simple inventory and people management platform for nonprofits that will allow them to:
           </p>
-          <br /><br />
+          <br />
           <ul>
             <li>Update, manage, and track their inventory of donations</li>
             <li>Collect donor and donee information</li>
