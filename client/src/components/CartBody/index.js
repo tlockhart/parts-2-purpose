@@ -34,7 +34,6 @@ import { MDBContainer, MDBTable, MDBRow,
                 <MDBTableBody>
                 {props.cartItems.map(cartItem => {
                   return (
-
                     <CartItem
                               key={cartItem._id}
                               updateItem = {props.updateItem}
@@ -53,7 +52,7 @@ import { MDBContainer, MDBTable, MDBRow,
   </React.Fragment>
     :<div className = "hide-component"></div>}
     </React.Fragment>
-  );//return
+  ); //return
 }
 
 // This is one item in the cart
@@ -65,8 +64,6 @@ validateQuantity = (event) => {
     //Validate Whether the Quantity is in stock
     if(event){
       let quantityId = event.target.id;
-      // console.log("CLICKED ITEM ID = "+quantityId);
-      // this.props.updateItem(event.target.id, event.target.value);
       this.props.updateItem(quantityId, event.target.value);
     }
     let quantityInputElements = document.querySelectorAll('[data-quantity-id]');
@@ -78,7 +75,7 @@ validateQuantity = (event) => {
         let quantityInputValue = parseInt(quantityInputElements[i].value);
         isQuantityAvailable = minValue <= quantityInputValue && maxValue >= quantityInputValue && maxValue !== 0;
 
-        // if quantity not available stop loop
+        // If quantity not available stop loop
         if (!isQuantityAvailable){
           shouldCartBeSubmitted = false;
           quantityInputElements[i].style.color = 'red';
@@ -88,12 +85,11 @@ validateQuantity = (event) => {
           quantityInputElements[i].style.color = '';
           }
         }
-      }//for
+      } //for
 
       if(shouldCartBeSubmitted)
       {
         document.getElementById("checkout-btn").disabled = false;
-        //console.log("Completed Order", jsonOrder);
       }
       else
       {

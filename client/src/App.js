@@ -28,27 +28,26 @@ class App extends Component {
     ddlOrganizations: []
   };
 
-  /***************************************************************************
-   * Method:handleOrgSearch
-   * Children: NavBar Component
-   * Descriptions: Whenever an option is selected in the Organizational Search
-   * DropDown (in NavBar) redirect the app to the page of the organization
-   * selected and set the organization state.
-   * *************************************************************************/
+  // *************************************************************************
+  // Method:handleOrgSearch
+  // Children: NavBar Component
+  // Descriptions: Whenever an option is selected in the Organizational Search
+  // DropDown (in NavBar) redirect the app to the page of the organization
+  // selected and set the organization state.
+  // *************************************************************************
   handleOrgSearch = (event, showHideCartCB) =>{
     var ddlOrgElem = document.getElementById("ddlOrgList");
     this.organization = ddlOrgElem.options[ddlOrgElem.selectedIndex].text.split(' ').join('_');
     this.setState({organization: this.organization});
 
-    //IMPORTANT: Redirect to the selected organization's page.
+    // IMPORTANT: Redirect to the selected organization's page.
     history.push({
       pathname: '/search/'+this.organization
     });
 
-    //IMPORTANT: Automatically reset the selection, so the page
-    //will be refreshed if the same organization is selected.
+    // IMPORTANT: Automatically reset the selection, so the page
+    // will be refreshed if the same organization is selected.
     document.getElementById('ddlOrgList').selectedIndex = 0;
-    // console.log("Processing ShowHide Cart");
     showHideCartCB();
     window.location.reload();
   };
@@ -63,13 +62,13 @@ class App extends Component {
     }
     return urlPage;
   }
- /**************************************************************************/
-//Populates the ddlOrgList values
+// *********************************************
+// Populates the ddlOrgList values
   getDDLOrganizationValues = (cb) => {
     let baseURL = "/organizations";
     API.getOrganizationValues(baseURL)
       .then(res => {
-        //callback to store state variables
+        // callback to store state variables
         cb(res);
       })
       .catch(err => console.log(err));
@@ -97,7 +96,6 @@ class App extends Component {
               <Route exact path="/home/:organization" component={HomeContainer} />
               {/* Pass the selected organization to the SearchContainer Page for a re-render*/}
               <Route exact path="/search/:organization"
-                // render={(props) => <SearchUpdate {...props} organization = {this.state.organization}/>}
                 render={() => <SearchUpdate organization = {this.state.organization}/>}
               />
               <Route exact path="/confirmation/:orderId" component={ConfirmationContainer} />

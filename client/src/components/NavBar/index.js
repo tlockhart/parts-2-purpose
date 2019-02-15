@@ -42,7 +42,7 @@ class NavBar extends Component {
     invalidEmail: false,
     sideModal: false
   };
-  /************************************************************/
+  // ************************************************************
   toggleCart = () => {
     this.setState({
       sideModal: !this.state.sideModal
@@ -50,7 +50,7 @@ class NavBar extends Component {
   }
   // SHOW HIDE CART WITH USER STATE CHECK
   // (Does not handle sessiond data on page refresh)
-  // ******************************************************************
+  // ************************************************************
   showHideCart = () => {
     let shouldCartBeHidden = false;
     //Step 1: Determine if user is logged in:
@@ -81,7 +81,7 @@ class NavBar extends Component {
     }
   }
 
-  //SHOW HIDE CART WITH USER CHECK (Check on session id on page refresh)
+  // SHOW HIDE CART WITH USER CHECK (Check on session id on page refresh)
   // ******************************************************************
   showHideCartCheckSessionID = (userId) => {
     let shouldCartBeHidden = false;
@@ -120,38 +120,33 @@ class NavBar extends Component {
       if (shoppingCart.className === 'show-cart') {
         shoppingCart.classList.remove("show-cart");
         shoppingCart.classList.add("hide-cart");
-        // console.log("Hiding Cart Now: removing show-cart class");
       }
       else{
         shoppingCart.classList.remove("show-cart");
         shoppingCart.classList.add("hide-cart");
-        // console.log("Still hiding shopping cart: added hide-cart just in case");
       }
     }
     displayCart = () => {
       let shoppingCart = document.getElementById("shopping-cart");
-      //If shoppingCart is not displayed then  display it,
-      //Else if shopping cart is displayed then continue displaying it.
+      // If shoppingCart is not displayed then  display it,
+      // Else if shopping cart is displayed then continue displaying it.
       if(shoppingCart){
         if(shoppingCart.className === 'hide-cart') {
           shoppingCart.classList.remove("hide-cart");
           shoppingCart.classList.add("show-cart");
-          // console.log("Showing Cart Now: removing hidden-class");
         }
         else{
           shoppingCart.classList.remove("hide-cart");
           shoppingCart.classList.add("show-cart");
-          // console.log("Still displaying shopping cart: added show-cart just in case");
         }
       }
     }
-    /**************************************************************************************/
+    // **************************************************************
   componentDidMount = () => {
     const cookieUserId = readCookie("_uid");
     this.setState({_id: cookieUserId});
     this.props.idChanged(cookieUserId);
     this.showHideCartCheckSessionID(cookieUserId);
-    // console.log("UID = "+cookieUserId);
   }
 
   toggleCollapse = () => {
@@ -179,7 +174,6 @@ class NavBar extends Component {
     .then(res => {
 
       if(res.data !== "Incorrect Password"){
-      //  console.log(res.data);
         this.props.idChanged(res.data._id, res.data.userName);
         this.setState({
           login: true,
