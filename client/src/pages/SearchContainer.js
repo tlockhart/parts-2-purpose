@@ -5,7 +5,7 @@ import { InventoryTableBody } from "../components/InventoryTableBody";
 // import { CartModal } from "../components/CartModal";
 import { CartBody } from "../components/CartBody";
 import API from "../utils/API";
-// import Touchable from 'rc-touchable';
+import Touchable from 'rc-touchable';
 import readCookie from "../utils/RCAPI";
 import CategorySearchList from "../components/CategorySearchList";
 import { MDBCard, MDBBtn } from "mdbreact";
@@ -443,18 +443,21 @@ class SearchContainer extends Component {
                           className="btn btn-radius"
                           data-dismiss="modal">Close
                           </MDBBtn>
-                        <MDBBtn
-                          // className="btn btn-primary "
-                          // className = "btn btn-#00bfa5 teal accent-4 btn-lg Ripple-parent btn-rounded white-text"
-                          type = "button"
-                          color="secondary"
-                          className = "btn btn-#039be5 light-blue darken-1 btn-radius"
-                          id ="checkout-btn"
-                          data-dismiss="modal"
-                          aria-label="Close"
-                          disabled = {this.state.cartItems.length === 0 ? (true):(false)}
-                          onClick={this.submitOrder}>Submit
-                        </MDBBtn>
+                          <Touchable onPress={this.submitOrder}>
+                            <MDBBtn
+                              // className="btn btn-primary "
+                              // className = "btn btn-#00bfa5 teal accent-4 btn-lg Ripple-parent btn-rounded white-text"
+                              type = "button"
+                              color="secondary"
+                              className = "btn btn-#039be5 light-blue darken-1 btn-radius"
+                              id ="checkout-btn"
+                              data-dismiss="modal"
+                              aria-label="Close"
+                              disabled = {this.state.cartItems.length === 0 ? (true):(false)}
+                              // onClick={this.submitOrder}>
+                              >Submit
+                            </MDBBtn>
+                        </Touchable>
                       </div>
                     </div>
                   </div>
