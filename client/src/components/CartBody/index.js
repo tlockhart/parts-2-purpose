@@ -14,7 +14,7 @@ import { MDBContainer, MDBTable, MDBRow,
     <React.Fragment>
     <MDBContainer>
       <MDBRow>
-        <MDBCol>
+        <MDBCol className= "padding-x">
             <MDBTable>
                 <MDBTableHead>
                   <tr >
