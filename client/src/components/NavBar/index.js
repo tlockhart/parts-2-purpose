@@ -327,14 +327,7 @@ class NavBar extends Component {
                         isOpen={this.state.isOpen}
                         navbar>
           <MDBNavbarNav right>
-            <MDBNavItem>
-              <OrganizationSearchList
-                      eventKey={1}
-                      orgSearchEvent={this.props.orgSearchEvent}
-                      showHideCart = {this.showHideCart}>
-              </OrganizationSearchList>
-            </MDBNavItem>
-            <MDBNavItem>
+          <MDBNavItem>
               <Touchable onPress={this.toggleCart}>
                 <button
                         id = "shopping-cart"
@@ -347,6 +340,13 @@ class NavBar extends Component {
                         <MDBIcon icon="shopping-cart" /> Shopping Cart
                 </button>
               </Touchable>
+            </MDBNavItem>
+            <MDBNavItem>
+              <OrganizationSearchList
+                      eventKey={1}
+                      orgSearchEvent={this.props.orgSearchEvent}
+                      showHideCart = {this.showHideCart}>
+              </OrganizationSearchList>
             </MDBNavItem>
             <MDBNavItem >
               <MDBNavLink to="/donate" onClick = {this.hideCart}>Donate</MDBNavLink>
