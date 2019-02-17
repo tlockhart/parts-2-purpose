@@ -13,8 +13,8 @@
 }
 
 .xbtn {
-  width: 30px;
-  height: 30px;
+ /* width: 30px;*/
+  /*height: 30px;*/
   font-size: 16px !important;
   border-radius: 20px !important;
   background-color: red;
