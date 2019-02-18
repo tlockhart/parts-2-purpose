@@ -15,7 +15,7 @@ import { MDBContainer, MDBTable, MDBRow,
     <MDBContainer>
       <MDBRow>
         <MDBCol className= "padding-x">
-            <MDBTable>
+            <MDBTable w-100>
                 <MDBTableHead>
                   <tr >
                     <th className="align-middle w-75">Item</th>
@@ -114,6 +114,7 @@ validateQuantity = (event) => {
       </td>
       <td className="align-middle  text-center">
         <input className = "show-component text-center w-75"
+        // <input className = "show-component align-middle text-center w-25"
               id={'quantity-'+this.props.cartItem._id} type="number"
               data-quantity-id = {this.props.cartItem._id}
               min = "1" max = {this.props.stockQuantity}
@@ -125,7 +126,8 @@ validateQuantity = (event) => {
       <td className="align-middle">
         <DeleteCartItemBtn  cartItem = {this.props.cartItem}
                             delCartItems = {this.props.delCartItems}>
-        </DeleteCartItemBtn></td>
+        </DeleteCartItemBtn>
+      </td>
     </tr>
   );
 }
