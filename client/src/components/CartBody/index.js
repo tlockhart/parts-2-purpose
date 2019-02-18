@@ -14,8 +14,9 @@ import { MDBContainer, MDBTable, MDBRow,
     <React.Fragment>
     <MDBContainer>
       <MDBRow>
-        <MDBCol className= "padding-x">
-            <MDBTable w-100>
+        {/* <MDBCol className= "padding-x"> */}
+        <MDBCol>
+            <MDBTable>
                 <MDBTableHead>
                   <tr >
                     <th className="align-middle w-75">Item</th>
