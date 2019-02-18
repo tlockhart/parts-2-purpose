@@ -119,7 +119,14 @@ th {
   }
 
 #close-btn, #checkout-btn, #register-btn, #login-btn {
-  border-radius: 30px !important;
+  /* border-radius: 30px !important;
   padding-left: 10px!important;
-  padding-right: 10px!important;
+  padding-right: 10px!important; */
+  padding: 10px 20px!important;
+  text-align: center!important;
+  text-decoration: none!important;
+  display: inline-block!important;
+  margin: 4px 2px!important;
+  cursor: pointer!important;
+  border-radius: 20px!important;
 }
