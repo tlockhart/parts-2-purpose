@@ -18,27 +18,29 @@ import { MDBContainer, MDBTable, MDBRow,
         <MDBCol>
             <MDBTable>
                 <MDBTableHead>
-                <tr>
-                  <th>Item</th>
-                  <th>Desciption</th>
-                  <th>UOM</th>
-                  <th>Quantity</th>
-                  <th></th>
-                </tr>
+                  <tr>
+                    <th>Item</th>
+                    <th>Desciption</th>
+                    <th>UOM</th>
+                    <th>Quantity</th>
+                    <th></th>
+                  </tr>
                 </MDBTableHead>
                 <MDBTableBody>
-                {props.cartItems.map(cartItem => {
-                  return (
-                    <CartItem
-                              key={cartItem._id}
-                              updateItem = {props.updateItem}
-                              cartItemQuantity= {cartItem.productQuantity}
-                              stockQuantity={cartItem.stockQuantity}
-                              cartItem= {cartItem}
-                              delCartItems= {props.delCartItems}>
-                    </CartItem>
-                  );
-                })}
+                  <tr>
+                    <td>Bottle top filter funnel</td>
+                    <td>125ul</td>
+                    <td>bag</td>
+                    <td><input></input></td>
+                    <td><DeleteCartItemBtn></DeleteCartItemBtn></td>
+                  </tr>
+                  <tr>
+                    <td>Tractor</td>
+                    <td>2tons</td>
+                    <td>none</td>
+                    <td><input type="number"  min = "1" max = "25"></input></td>
+                    <td><DeleteCartItemBtn></DeleteCartItemBtn></td>
+                  </tr>
                 </MDBTableBody>
               </MDBTable>
         </MDBCol>
