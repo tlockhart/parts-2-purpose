@@ -35,7 +35,7 @@ Our goal is to provide an IT solution that would make the process easier for sma
 - HTML
 - CSS
 - Bootstrap
-- MDBootstrap (Material Design for Bootstrap)
+- MDBReact (Material Design for Bootstrap - React Version)
 - RC Touchable (To enable touch capabilities on mobile devices)
 - NodeMailer (To enable e-mails)
 - Bcrypt (Login encryption)
