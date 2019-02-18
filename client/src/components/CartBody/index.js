@@ -104,12 +104,20 @@ validateQuantity = (event) => {
   return (
     <tr id = {'row-' + this.props.cartItem._id}
         key= {this.props.cartItem._id}>
-      <td  className="align-middle w-75"
+      {/* <td  className="align-middle w-75"
+          id={'name-'+ this.props.cartItem._id}>
+          {this.props.cartItem.product}
+      </td> */}
+      <td  className="align-middle"
           id={'name-'+ this.props.cartItem._id}>
           {this.props.cartItem.product}
       </td>
-      <td
+      {/* <td
           className="align-middle w-50 ">
+          {this.props.cartItem.description}
+      </td> */}
+      <td
+          className="align-middle">
           {this.props.cartItem.description}
       </td>
       <td
@@ -117,7 +125,8 @@ validateQuantity = (event) => {
           {this.props.cartItem.uom}
       </td>
       <td className="align-middle  text-center">
-        <input className = "show-component text-center w-75"
+        {/* <input className = "show-component text-center w-75" */}
+        <input className = "show-component text-center"
         // <input className = "show-component align-middle text-center w-25"
               id={'quantity-'+this.props.cartItem._id} type="number"
               data-quantity-id = {this.props.cartItem._id}
