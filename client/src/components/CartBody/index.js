@@ -16,7 +16,7 @@ import { MDBContainer, MDBTable, MDBRow,
       <MDBRow>
         {/* <MDBCol className= "padding-x"> */}
         <MDBCol>
-            <MDBTable>
+            <MDBTable responsive>
                 <MDBTableHead>
                   <tr >
                     {/* <th className="align-middle w-75">Item</th> */}
