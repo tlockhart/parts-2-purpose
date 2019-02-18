@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Touchable from "rc-touchable";
 import "./style.css";
 import { MDBContainer, MDBTable, MDBRow,
-        MDBCol, MDBTableHead, MDBTableBody,
+        MDBCol, MDBTableHead, MDBTableBody, MDBInput,
         MDBTooltip} from "mdbreact";
 
 // This is the container that carries the entire cart box
@@ -18,29 +18,36 @@ import { MDBContainer, MDBTable, MDBRow,
         <MDBCol>
             <MDBTable>
                 <MDBTableHead>
-                  <tr>
-                    <th>Item</th>
-                    <th>Desciption</th>
-                    <th>UOM</th>
-                    <th>Quantity</th>
-                    <th></th>
+                  <tr >
+                    {/* <th className="align-middle w-75">Item</th> */}
+                    <th className="align-middle">Item</th>
+                    {/* <th className="align-middle w-50">Description</th> */}
+                    <th className="align-middle">Description</th>
+                    <MDBTooltip
+                      placement="bottom"
+                      tag="th"
+                      className="align-middle text-center w-50"
+                      tooltipContent="Unit of Measure">
+                      UOM
+                    </MDBTooltip>
+                    {/* <th className="align-middle text-center w-25">Quantity</th> */}
+                    <th className="align-middle text-center">Quantity</th>
+                    <th className="align-middle text-center"></th>
                   </tr>
                 </MDBTableHead>
                 <MDBTableBody>
-                  <tr>
-                    <td>Bottle top filter funnel</td>
-                    <td>125ul</td>
-                    <td>bag</td>
-                    <td><input></input></td>
-                    <td><DeleteCartItemBtn></DeleteCartItemBtn></td>
-                  </tr>
-                  <tr>
-                    <td>Tractor</td>
-                    <td>2tons</td>
-                    <td>none</td>
-                    <td><input type="number"  min = "1" max = "25"></input></td>
-                    <td><DeleteCartItemBtn></DeleteCartItemBtn></td>
-                  </tr>
+                {props.cartItems.map(cartItem => {
+                  return (
+                    <CartItem
+                              key={cartItem._id}
+                              updateItem = {props.updateItem}
+                              cartItemQuantity= {cartItem.productQuantity}
+                              stockQuantity={cartItem.stockQuantity}
+                              cartItem= {cartItem}
+                              delCartItems= {props.delCartItems}>
+                    </CartItem>
+                  );
+                })}
                 </MDBTableBody>
               </MDBTable>
         </MDBCol>
@@ -119,7 +126,7 @@ validateQuantity = (event) => {
       </td>
       <td className="align-middle  text-center">
         {/* <input className = "show-component text-center w-75" */}
-        <input className = "show-component text-center"
+        <MDBInput className = "show-component text-center"
         // <input className = "show-component align-middle text-center w-25"
               id={'quantity-'+this.props.cartItem._id} type="number"
               data-quantity-id = {this.props.cartItem._id}
@@ -127,7 +134,7 @@ validateQuantity = (event) => {
               defaultValue = {this.props.cartItemQuantity}
               onChange = {this.validateQuantity}
               >
-        </input>
+        </MDBInput>
       </td>
       <td className="align-middle">
         <DeleteCartItemBtn  cartItem = {this.props.cartItem}

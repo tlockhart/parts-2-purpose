@@ -49,3 +49,7 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 .mdBContain{
   overflow: hidden;
 }
+
+.quantity-width{
+  width: 1rem!important;
+}

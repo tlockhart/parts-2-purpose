@@ -397,13 +397,14 @@ class SearchContainer extends Component {
                         </button>
                       </div>
                       {/* <!--Body--> */}
-                      <div className="modal-body">
+                      {/* <div className="modal-body"> */}
+                      <div>
                   <CartBody
-                              updateItem={this.updateItem}
-                              cartItems={this.cartItems}
-                              currentId={this.props.currentId}
-                              delCartItems={this.delCartItems}
-                              submitOrder={this.submitOrder}
+                               updateItem={this.updateItem}
+                               cartItems={this.cartItems}
+                               currentId={this.props.currentId}
+                               delCartItems={this.delCartItems}
+                               submitOrder={this.submitOrder}
                     >
                   </CartBody>
                   </div>
