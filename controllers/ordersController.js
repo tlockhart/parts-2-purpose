@@ -54,7 +54,8 @@ module.exports = {
     });
     const mailOptions = {
       from: 'parts02purpose@gmail.com',
-      to: `${data[0].user.email}, tony.lockhart@ymail.com, nathan.kloer@gmail.com`,
+      // to: `${data[0].user.email}, tony.lockhart@ymail.com, nathan.kloer@gmail.com`,
+      to: `${data[0].user.email}, tony.lockhart@ymail.com`,
       subject: `Your Recent Order ID#: ${data[0]._id}`,
       // text:`Thank you, ${data[0].user.firstName}, for your order request!\n\nYour Order ID is: ${data[0]._id} and has been submitted.\n\nSomeone from the organization will be in touch with you to schedule an appointment.\n\nThank you for using Parts-to-Purpose, and we hope that you will be able to put these parts to good purpose!`,
       text:'',

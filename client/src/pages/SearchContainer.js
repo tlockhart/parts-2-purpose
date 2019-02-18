@@ -138,6 +138,7 @@ class SearchContainer extends Component {
           this.setCatProductsState
         );
       }
+      document.getElementById('ddlCatList').selectedIndex = 0;
   };
 
   // Initialize the product state variables with the
