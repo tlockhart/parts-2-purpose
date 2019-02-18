@@ -19,8 +19,10 @@ import { MDBContainer, MDBTable, MDBRow,
             <MDBTable>
                 <MDBTableHead>
                   <tr >
-                    <th className="align-middle w-75">Item</th>
-                    <th className="align-middle w-50">Description</th>
+                    {/* <th className="align-middle w-75">Item</th> */}
+                    <th className="align-middle">Item</th>
+                    {/* <th className="align-middle w-50">Description</th> */}
+                    <th className="align-middle">Description</th>
                     <MDBTooltip
                       placement="bottom"
                       tag="th"
@@ -28,7 +30,8 @@ import { MDBContainer, MDBTable, MDBRow,
                       tooltipContent="Unit of Measure">
                       UOM
                     </MDBTooltip>
-                    <th className="align-middle text-center w-25">Quantity</th>
+                    {/* <th className="align-middle text-center w-25">Quantity</th> */}
+                    <th className="align-middle text-center">Quantity</th>
                     <th className="align-middle text-center"></th>
                   </tr>
                 </MDBTableHead>
