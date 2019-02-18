@@ -14,15 +14,12 @@ import { MDBContainer, MDBTable, MDBRow,
     <React.Fragment>
     <MDBContainer>
       <MDBRow>
-        {/* <MDBCol className= "padding-x"> */}
-        <MDBCol>
+        <MDBCol className= "padding-x">
             <MDBTable responsive>
                 <MDBTableHead>
                   <tr >
-                    {/* <th className="align-middle w-75">Item</th> */}
-                    <th className="align-middle">Item</th>
-                    {/* <th className="align-middle w-50">Description</th> */}
-                    <th className="align-middle">Description</th>
+                    <th className="align-middle w-75">Item</th>
+                    <th className="align-middle w-50">Description</th>
                     <MDBTooltip
                       placement="bottom"
                       tag="th"
@@ -30,8 +27,7 @@ import { MDBContainer, MDBTable, MDBRow,
                       tooltipContent="Unit of Measure">
                       UOM
                     </MDBTooltip>
-                    {/* <th className="align-middle text-center w-25">Quantity</th> */}
-                    <th className="align-middle text-center">Quantity</th>
+                    <th className="align-middle text-center w-25">Quantity</th>
                     <th className="align-middle text-center"></th>
                   </tr>
                 </MDBTableHead>
@@ -104,30 +100,20 @@ validateQuantity = (event) => {
   return (
     <tr id = {'row-' + this.props.cartItem._id}
         key= {this.props.cartItem._id}>
-      {/* <td  className="align-middle w-75"
-          id={'name-'+ this.props.cartItem._id}>
-          {this.props.cartItem.product}
-      </td> */}
-      <td  className="align-middle"
+      <td  className="align-middle w-75"
           id={'name-'+ this.props.cartItem._id}>
           {this.props.cartItem.product}
       </td>
-      {/* <td
-          className="align-middle w-50 ">
-          {this.props.cartItem.description}
-      </td> */}
       <td
-          className="align-middle">
+          className="align-middle w-50">
           {this.props.cartItem.description}
       </td>
       <td
-          className="align-middle text-center w-25">
+          className="align-middle text-center w-50">
           {this.props.cartItem.uom}
       </td>
       <td className="align-middle  text-center">
-        {/* <input className = "show-component text-center w-75" */}
-        <MDBInput className = "show-component text-center"
-        // <input className = "show-component align-middle text-center w-25"
+        <MDBInput className = "show-component align-middle text-center w-75"
               id={'quantity-'+this.props.cartItem._id} type="number"
               data-quantity-id = {this.props.cartItem._id}
               min = "1" max = {this.props.stockQuantity}

@@ -1,6 +1,6 @@
 import React from "react";
 import Touchable from "rc-touchable";
-import { Input, Dropdown, DropdownList } from "../LogIn";
+import { Input} from "../LogIn";
 import { MDBTooltip, MDBBtn, MDBModal, MDBModalBody,
          MDBModalHeader, MDBModalFooter } from 'mdbreact';
 import "../../style.css";

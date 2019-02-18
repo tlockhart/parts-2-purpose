@@ -397,8 +397,7 @@ class SearchContainer extends Component {
                         </button>
                       </div>
                       {/* <!--Body--> */}
-                      {/* <div className="modal-body"> */}
-                      <div>
+                      <div className="modal-body">
                   <CartBody
                                updateItem={this.updateItem}
                                cartItems={this.cartItems}
