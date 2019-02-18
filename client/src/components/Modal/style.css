@@ -1,3 +1,7 @@
 .modal-scroll-y{
   overflow-y: auto;
 }
+.link-width{
+  padding-left: 7px;
+  padding-right: 7px;
+}
