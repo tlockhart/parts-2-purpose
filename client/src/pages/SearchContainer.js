@@ -139,6 +139,9 @@ class SearchContainer extends Component {
         );
       }
       document.getElementById('ddlCatList').selectedIndex = 0;
+      document.getElementById("ddlCatList").blur();
+      // window.location.reload();
+
   };
 
   // Initialize the product state variables with the
