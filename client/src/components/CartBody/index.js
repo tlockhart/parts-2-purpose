@@ -114,10 +114,10 @@ validateQuantity = (event) => {
       </td>
       <td className="align-middle  text-center">
         <MDBInput className = "show-component align-middle text-center w-75"
-              id={'quantity-'+this.props.cartItem._id} type="number"
+              id = {'quantity-'+this.props.cartItem._id} type="number"
               data-quantity-id = {this.props.cartItem._id}
               min = "1" max = {this.props.stockQuantity}
-              defaultValue = {this.props.cartItemQuantity}
+              valueDefault = {this.props.cartItemQuantity}
               onChange = {this.validateQuantity}
               >
         </MDBInput>
