@@ -18,22 +18,13 @@ import { MDBContainer, MDBTable, MDBRow,
         <MDBCol>
             <MDBTable>
                 <MDBTableHead>
-                  <tr >
-                    {/* <th className="align-middle w-75">Item</th> */}
-                    <th className="align-middle">Item</th>
-                    {/* <th className="align-middle w-50">Description</th> */}
-                    <th className="align-middle">Description</th>
-                    <MDBTooltip
-                      placement="bottom"
-                      tag="th"
-                      className="align-middle text-center w-50"
-                      tooltipContent="Unit of Measure">
-                      UOM
-                    </MDBTooltip>
-                    {/* <th className="align-middle text-center w-25">Quantity</th> */}
-                    <th className="align-middle text-center">Quantity</th>
-                    <th className="align-middle text-center"></th>
-                  </tr>
+                <tr>
+                  <th>Item</th>
+                  <th>Desciption</th>
+                  <th>UOM</th>
+                  <th>Quantity</th>
+                  <th></th>
+                </tr>
                 </MDBTableHead>
                 <MDBTableBody>
                 {props.cartItems.map(cartItem => {
