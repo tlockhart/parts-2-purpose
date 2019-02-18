@@ -120,4 +120,6 @@ th {
 
 #close-btn, #checkout-btn, #register-btn, #login-btn {
   border-radius: 30px !important;
+  padding-left: 10px!important;
+  padding-right: 10px!important;
 }

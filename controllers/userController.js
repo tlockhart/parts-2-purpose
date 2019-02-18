@@ -23,9 +23,9 @@ module.exports = {
                 userName: req.body.userName,
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
-                school: req.body.school,
-                district: req.body.district,
-                course: req.body.course,
+                // school: req.body.school,
+                // district: req.body.district,
+                // course: req.body.course,
                 email: req.body.email,
                 password: hash
               })

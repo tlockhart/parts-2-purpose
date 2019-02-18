@@ -50,7 +50,7 @@ export function ModalComponent(props) {
                 smallname="form-text text-muted"
                 smalltext="Last Name"
                 required="required"/>
-        <Input
+        {/* <Input
                 value={props.state.school}
                 onChange={props.handleInputChange}
                 name="school"
@@ -81,7 +81,7 @@ export function ModalComponent(props) {
                                 value={course}>
                   </DropdownList>
               ))}
-        </Dropdown>
+        </Dropdown> */}
         <Input
                 value={props.state.email}
                 onChange={props.handleInputChange}

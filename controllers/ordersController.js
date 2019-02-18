@@ -42,20 +42,23 @@ module.exports = {
       .populate("products.product")
       .then(function (data) {
         if (data.length > 0) {
-    //********** */ Send Email
+    // ***********
+    // Send Email
+    // ***********
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'parts2pieces.info@gmail.com',
+        user: 'parts02purpose@gmail.com',
         pass: process.env.gmailPassword
       }
     });
-
     const mailOptions = {
-      from: 'parts2pieces.info@gmail.com',
-      to: `${data[0].user.email}`,
+      from: 'parts02purpose@gmail.com',
+      to: `${data[0].user.email}, tony.lockhart@ymail.com`,
       subject: `Your Recent Order ID#: ${data[0]._id}`,
-      text:`Thank you, ${data[0].user.firstName}, for your order request!\n\nYour Order ID is: ${data[0]._id} and has been submitted.\n\nSomeone from the organization will be in touch with you to schedule an appointment.\n\nThank you for using Parts-to-Purpose, and we hope that you will be able to put these parts to good purpose!`
+      // text:`Thank you, ${data[0].user.firstName}, for your order request!\n\nYour Order ID is: ${data[0]._id} and has been submitted.\n\nSomeone from the organization will be in touch with you to schedule an appointment.\n\nThank you for using Parts-to-Purpose, and we hope that you will be able to put these parts to good purpose!`,
+      text:'',
+      html:`<p>Hello ${data[0].user.firstName},<br/><br/>Thank you for demoing the Parts-2-Purpose app at the Georgia Tech Bootcamp Demo Day.<br/><br/>If you are interested in viewing more of our work, please see our individual project portfolios.</p><ol><li><a href="https://tlockhart.github.io/portfolio/">Tony Lockhart Portfolio</a></li><li><a href="https://nathankloer.github.io/MyPortfolio/">Nathan Kloer Portfolio</a></li></ul>`
     };
     transporter.sendMail(mailOptions, function(error, info){
       if (error) {
