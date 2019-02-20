@@ -2,7 +2,7 @@
 
 **Team** `SciFly`
 
-- Tony Lockhart: Responsible for database design, API Routes, shopping cart and search components, and backend integration.
+- Tony Lockhart: Responsible for db design, API Routes, cart and search components, mobal and backend integration.
 - Phillip Grider: Responsible for user login/registration, responsive design, email confirmation, and frontend integration.
 - Mary Nguyen: Responsible for UI and frontend design.
 - Nathan Kloer: Responsible for UI and frontend design.

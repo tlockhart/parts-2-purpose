@@ -159,7 +159,8 @@ class NavBar extends Component {
                   });
   }
 
-  handleShow = () => {
+  handleShow = (event) => {
+    event.preventDefault();
     this.setState({
                     show: true,
                     registerUser: false
@@ -208,7 +209,8 @@ class NavBar extends Component {
 
   };
 
-  handleRegister = () => {
+  handleRegister = (event) => {
+    event.preventDefault();
     this.setState({
                     show: true,
                     registerUser: true,
