@@ -293,7 +293,7 @@ class NavBar extends Component {
     this.setState({_id: null})
     this.props.idChanged("", "");
     document.cookie = `_uid=''; expires=Thu, 01 Jan 1970 00:00:00 UTC`;
-    window.location.reload();
+    // window.location.reload();
     this.hideCart();
   }
   handleInputChange = event => {
