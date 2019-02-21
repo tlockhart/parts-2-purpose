@@ -12,7 +12,7 @@
 ### IMPORTANT LINKS
 * [Link to github repository](https://github.com/tlockhart/parts-2-purpose)
 
-* [Link to Production Site](https://shielded-refuge-22847.herokuapp.com/)
+* [Link to Production Site: Mobile Friendly](https://shielded-refuge-22847.herokuapp.com/)
 
 ---
 ### **About the site**
