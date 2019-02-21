@@ -199,7 +199,7 @@ class NavBar extends Component {
           registerError: false,
           invalidEmail: false
           }, this.showHideCart());
-        document.cookie = `_uid=${res.data._id};`;
+        document.cookie = `_uid=${res.data._id}; path=/`;
           window.location.reload();
       }else if(res.data === "Incorrect Password"){
         this.setState({loginError: true})
@@ -250,7 +250,7 @@ class NavBar extends Component {
               }else if(res.data === "this errorValidationError: email: Please enter a valid e-mail address"){
                 this.setState({invalidEmail: true});
               }else{
-              document.cookie = `_uid=${this.props.userId};`;
+              document.cookie = `_uid=${this.props.userId}; path=/`;
               this.setState({
                 login: true,
                 loggedInUser: this.state.firstName + " " + this.state.lastName,
@@ -292,9 +292,10 @@ class NavBar extends Component {
   handleSignOut = () => {
     this.setState({_id: null})
     this.props.idChanged("", "");
-    document.cookie = `_uid=; expires=Thu, 01 Jan 1970 00:00:00 UTC;`;
+    document.cookie = `_uid=''; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
     this.hideCart();
   }
+
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
