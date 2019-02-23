@@ -31,10 +31,17 @@ class HomeContainer extends Component {
               <MDBRow>
                 <MDBCol lg="7">
                   <h3 id="search-org" className="font-weight-bold">
-                    <strong>Search by Organization</strong>
+                    <strong>Getting Started</strong>
                   </h3>
                   <p className="landingtext">
-                    Are you looking for a "part to purpose"? Please select an organization above to see what donations they have available within their inventory to provide to the cause at need.
+                    Are you looking for a "part to purpose"? Please follow the steps below to see what donations are available to provide to your cause.
+                    <br/><br/>
+                    <ol>
+                      <li>Create a Parts-to-Purpose account by registering above</li>
+                      <li>Log into your Parts-to-Purpose account</li>
+                      <li>Select an organization to view their inventory</li>
+                      <li>Add items to your shopping cart and submit an order</li>
+                    </ol>
                   </p>
                 </MDBCol>
                 <MDBCol lg="5">
