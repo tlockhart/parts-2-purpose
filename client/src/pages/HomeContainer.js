@@ -35,14 +35,13 @@ class HomeContainer extends Component {
                   </h3>
                   <p className="landingtext">
                     Are you looking for a "part to purpose"? Please follow the steps below to see what donations are available to provide to your cause.
-                    <br/><br/>
-                    <ol>
-                      <li>Create a Parts-to-Purpose account by registering above</li>
-                      <li>Log into your Parts-to-Purpose account</li>
-                      <li>Select an organization to view their inventory</li>
-                      <li>Add items to your shopping cart and submit an order</li>
-                    </ol>
                   </p>
+                  <ol>
+                    <li>Create a Parts-to-Purpose account by registering above</li>
+                    <li>Log into your Parts-to-Purpose account</li>
+                    <li>Select an organization to view their inventory</li>
+                    <li>Add items to your shopping cart and submit an order</li>
+                  </ol>
                 </MDBCol>
                 <MDBCol lg="5">
                   <MDBView className="rounded z-depth-2 mb-lg-0 mb-4" hover waves>
