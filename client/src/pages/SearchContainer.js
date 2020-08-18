@@ -109,15 +109,17 @@ class SearchContainer extends Component {
 
   // Initialize the product state variables with the
   // results of the Inventory by Organization search results
-  loadInventoryByOrganization = (baseURL, organization, cb) => {
-    API.getInventoryByOrganization(baseURL, organization)
-      .then(res => {
+  loadInventoryByOrganization = async (baseURL, organization, cb) => {
+    try{
+      const response = await API.getInventoryByOrganization(baseURL, organization);
+      if (response.status === 200) {
         this.cartItems = [];
         this.setState({ cartItems: [] });
-        // callback to store state variables
-        cb(res);
-      })
-      .catch(err => console.log(err));
+        cb(response);
+      }
+    } catch(err) {
+      console.log(err)
+    }
   };
 
   handleCatSearch = event => {
@@ -144,13 +146,20 @@ class SearchContainer extends Component {
 
   // Initialize the product state variables with the
   // results of the Inventory by Category search results
-  loadInventoryByCategory = (baseURL, category, cb) => {
-    API.getInventoryByCategory(baseURL, category, this.state.organization)
-      .then(res => {
-        // callback to store state variables
-        cb(res);
-      })
-      .catch(err => console.log(err));
+  loadInventoryByCategory = async (baseURL, category, cb) => {
+    try {
+      const response = await API.getInventoryByCategory(baseURL, category, this.state.organization);
+      if (response.status === 200) {
+         // callback to store state variables
+        //  console.log('Response:', response);
+        cb(response);
+      }
+      else {
+        // console.log(response);
+      }
+    } catch(err){
+      console.log(err)
+    }
   };
 
   setOrgProductsState = (res) => {
@@ -174,29 +183,34 @@ class SearchContainer extends Component {
   // * BEGINNING CART ASSEMBLY
   // *************************
   // Load Cart Items:
-  addCartItems = (event) => {
+  addCartItems = async (event) => {
     event.preventDefault();
     const addButton = document.getElementById(event.target.id);
     addButton.disabled = true;
     let tId = event.target.id;
-    API.getItem(tId)
-      .then(res => {
-        // callback to store state variables
+    try {
+      const response = await API.getItem(tId);
+      if ( response.status === 200) {
         const cartItem =
         {
           // var productId = order.id;
-          _id: res.data._id,
-          product: res.data.productName,
-          description: res.data.description,
-          uom: res.data.uom,
-          stockQuantity: res.data.stockQuantity,
+          _id: response.data._id,
+          product: response.data.productName,
+          description: response.data.description,
+          uom: response.data.uom,
+          stockQuantity: response.data.stockQuantity,
           tId: tId,
           productQuantity: 1 // no productQuantity
         };
         this.cartItems.push(cartItem);
         this.setState({ cartItems: this.cartItems });
-      })
-      .catch(err => console.log(err));
+        // console.log("Data Sent", response);
+      } else {
+        // console.log("Data not sent");
+      }
+    } catch(err) {
+        // console.log(err);
+    }
   }
 
   // ERROR HANDLING: If A Product is not avaiable disable the add button;

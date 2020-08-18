@@ -6,7 +6,7 @@ const ordersController = require("../../controllers/ordersController");
 
 /*
 ROUTE1: /api/products
-Description: Return all data from the products table as a JSON object.
+Description: Use Express to return all data from the products table as a JSON object.
 Setup: The first path will look for urls starting with products  "/products". This sets up "/products" as the root directory, it is referenced as "/" in this file only.  Anything with "/products is sent here from the client/src/utils/API.js.
 */
 //CHANGE-7

@@ -16,7 +16,7 @@ router.route('/:organization')
 router.route('/:id')
 .get(productsController.findInventoryItem);
 /********************************************
- DESCRIPTION: Search by Inventory By Category and Organization:
+ DESCRIPTION: Use Express to search by Inventory By Category and Organization:
  ROUTE: /api/products/:category/:organization
  ********************************************/
 router.route('/:category/:organization')

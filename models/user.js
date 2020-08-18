@@ -15,7 +15,7 @@ const userSchema = new Schema({
   order:[
     {
       type: Schema.Types.ObjectId,
-      // The ObjectIds will refer to the ids in the Note model
+      // The ObjectIds will refer to the ids in the Order model
       ref: "Order"
     }
   ],

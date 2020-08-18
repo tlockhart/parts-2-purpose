@@ -7,7 +7,7 @@ module.exports = {
   createOrder: function (req, res) {
     let id = req.body._id;
     const productData = [];
-    for (let i = 0; i< req.body.data.length;i++) {
+    for (let i = 0; i < req.body.data.length; i++) {
       productData.push({
         productQuantity: req.body.data[i].productQuantity,
         product: req.body.data[i]._id
@@ -29,7 +29,7 @@ module.exports = {
           },
         )//return
           .then(function (dataUpdate) {
-            res.json(newOrder._id);
+            res.status(200).json(newOrder._id);
           })
       });//orderCreate thenable
   },//createOrder function
@@ -42,39 +42,41 @@ module.exports = {
       .populate("products.product")
       .then(function (data) {
         if (data.length > 0) {
-    // ***********
-    // Send Email
-    // ***********
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: 'parts02purpose@gmail.com',
-        pass: process.env.gmailPassword
-      }
-    });
-    const mailOptions = {
-      from: 'parts02purpose@gmail.com',
-      to: `${data[0].user.email}, tony.lockhart@ymail.com`,
-      subject: `Your Recent Order ID#: ${data[0]._id}`,
-      // text:`Thank you, ${data[0].user.firstName}, for your order request!\n\nYour Order ID is: ${data[0]._id} and has been submitted.\n\nSomeone from the organization will be in touch with you to schedule an appointment.\n\nThank you for using Parts-to-Purpose, and we hope that you will be able to put these parts to good purpose!`,
-      text:'',
-      html:`<p>Hello ${data[0].user.firstName},<br/><br/>Thank you for demoing the Parts-2-Purpose app.<br/><br/>If you are interested in viewing more of my work, please see my individual project portfolio.</p><ol><li><a href="https://tlockhart.github.io/portfolio/">Tony Lockhart Portfolio</a></li>`
-    };
-    transporter.sendMail(mailOptions, function(error, info){
-      if (error) {
-        console.log(error);
-      } else {
-        console.log('Email sent: ' + info.response);
-      }
-    });
-          res.json(data);
+          // ***********
+          // Send Email
+          // ***********
+          const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+              user: 'parts02purpose@gmail.com',
+              pass: process.env.gmailPassword
+            }
+          });
+          const mailOptions = {
+            from: 'parts02purpose@gmail.com',
+            to: `${data[0].user.email}, tony.lockhart@ymail.com`,
+            subject: `Your Recent Order ID#: ${data[0]._id}`,
+            // text:`Thank you, ${data[0].user.firstName}, for your order request!\n\nYour Order ID is: ${data[0]._id} and has been submitted.\n\nSomeone from the organization will be in touch with you to schedule an appointment.\n\nThank you for using Parts-to-Purpose, and we hope that you will be able to put these parts to good purpose!`,
+            text: '',
+            html: `<p>Hello ${data[0].user.firstName},<br/><br/>Thank you for demoing the Parts-2-Purpose app.<br/><br/>If you are interested in viewing more of my work, please see my individual project portfolio.</p><ol><li><a href="https://tlockhart.github.io/portfolio/">Tony Lockhart Portfolio</a></li>`
+          };
+
+          transporter.sendMail(mailOptions, function (error, info) {
+            if (error) {
+              console.log(error);
+            } else {
+              console.log('Email sent: ' + info.response);
+            }
+          });
+
+          res.status(200).json(data);
         }
         else {
           console.log("No Orders Found");
         }
-      })
+      }) // populate .then
       .catch(function (error) {
         console.log(error);
       });
-  }
+  } // populateOrder
 };

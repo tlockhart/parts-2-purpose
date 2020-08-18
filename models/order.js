@@ -11,7 +11,7 @@ const orderSchema = new Schema({
   },
   user: {
     type: Schema.Types.ObjectId,
-      // The ObjectIds will refer to the ids in the Note model
+      // The ObjectIds will refer to the ids in the User model
       ref: "User"
   },
   products: [
@@ -20,7 +20,7 @@ const orderSchema = new Schema({
       product: {
         // Store ObjectIds in the array
         type: Schema.Types.ObjectId,
-        // The ObjectIds will refer to the ids in the Note model
+        // The ObjectIds will refer to the ids in the Product model
         ref: "Product"
       }
     }

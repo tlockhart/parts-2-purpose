@@ -7,7 +7,7 @@ module.exports = {
     let field = "category";
     db.Product.distinct(field).and({ organization: {$regex: new RegExp('^' +organization.toLowerCase(), 'i')}})
     .then(dbModel => {
-          res.json(dbModel);
+          res.status(200).json(dbModel);
         })
     .catch(err => res.status(422).json(err));
   }

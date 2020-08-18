@@ -4,7 +4,7 @@ const organizationsController = require("../../controllers/organizationsControll
 
 /************************************************
 ROUTE: /api/organizations
-Description: Return all unique organizations in the DB.
+Description: Use Express to return all unique organizations in the DB.
 ************************************************/
 router.route('/')
 .get(organizationsController.findOrganizationValues);

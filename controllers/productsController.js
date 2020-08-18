@@ -6,20 +6,20 @@ module.exports = {
     let organization = req.params.organization.split('_').join(' ');
     db.Product
       .find({organization: {$regex: new RegExp('^' +organization.toLowerCase(), 'i')}})
-      .then(dbModel => res.json(dbModel))
+      .then(dbModel => res.status(200).json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   findByCategoryAndOrganization: function (req, res) {
     let organization = req.params.organization.split('_').join(' ');
     db.Product
       .find({ category: req.params.category, organization: {$regex: new RegExp('^' +organization.toLowerCase(), 'i')}})
-      .then(dbModel => res.json(dbModel))
+      .then(dbModel => res.status(200).json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   findInventoryItem: function (req, res) {
     db.Product
       .findOne({ _id: req.params.id })
-      .then(dbModel => res.json(dbModel))
+      .then(dbModel => res.status(200).json(dbModel))
       .catch(err => res.status(422).json(err));
   }
 };

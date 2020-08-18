@@ -117,7 +117,7 @@ validateQuantity = (event) => {
               id = {'quantity-'+this.props.cartItem._id} type="number"
               data-quantity-id = {this.props.cartItem._id}
               min = "1" max = {this.props.stockQuantity}
-              valueDefault = {this.props.cartItemQuantity}
+              valueDefault = {this.props.cartItemQuantity.toString()}
               onChange = {this.validateQuantity}
               >
         </MDBInput>
