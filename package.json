@@ -53,7 +53,7 @@
     "express": "^4.16.4",
     "if-env": "^1.0.4",
     "mdbreact": "^4.10.0",
-    "mongoose": "^5.4.6",
+    "mongoose": "^5.7.5",
     "node": "^11.7.0",
     "nodemailer": "^5.1.1",
     "rc-react": "^1.1.1",
