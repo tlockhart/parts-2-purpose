@@ -50,7 +50,7 @@
     "bootstrap": "^4.2.1",
     "concurrently": "^4.1.0",
     "dotenv": "^8.2.0",
-    "express": "^4.16.4",
+    "express": "^4.18.2",
     "if-env": "^1.0.4",
     "mdbreact": "^4.10.0",
     "mongoose": "^5.4.6",
